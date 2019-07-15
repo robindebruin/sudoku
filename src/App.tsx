@@ -3,12 +3,15 @@ import logo from "./logo.svg";
 import "./App.css";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import MenuBar from "./components/menu-bar/MenuBar";
+import MenuBar from "./components/MenuBar";
+import SudokuContainer from "./components/SudokuContainer";
+import { Container, CssBaseline } from "@material-ui/core";
 
 const useStyles = makeStyles({
   root: {
     width: "100%",
-    maxWidth: 500
+    maxWidth: 500,
+    margin: "auto"
   }
 });
 
@@ -17,21 +20,16 @@ function App() {
 
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header> */}
+      <CssBaseline />
       <MenuBar />
-      <div className={classes.root}>
+      <Container maxWidth="lg">
         <Typography variant="h1" component="h2" gutterBottom>
           h1. Heading
         </Typography>
-      </div>
+        <div className={classes.root}>
+          <SudokuContainer />
+        </div>
+      </Container>
     </div>
   );
 }
